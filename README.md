@@ -1,8 +1,8 @@
 # Event_manager
 
-> A program that keeps track of candidates data from another file (csv) to another using ruby
+* A program that keeps track of candidates data from another file (csv) to another using ruby
 
-> And accesses Google's civic information API for providing persons' gorvenment representatives for elections and where they can vote etc.
+* And accesses Google's civic information API for providing persons' gorvenment representatives for elections and where they can vote etc.
 
 ## Development Process
 
@@ -25,12 +25,12 @@ end
 
 ## Challenges and Solutions
 
-[] How to use APIs
-[] How to access data from a Comma Seperated Value file
-[] Downloading external file from CLI
+> [] How to use APIs
+> [] How to access data from a Comma Seperated Value file
+> [] Downloading external file from CLI
 
-[]
-[]
+> []
+> []
 [x] Install curl first with `sudo` package installer
 
 ## Discoveries
