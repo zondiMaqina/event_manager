@@ -12,3 +12,4 @@
 ## Challenges and Solutions
 
 [] How to use APIs
+[] How to access data from a Comma Seperated Value file
