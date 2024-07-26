@@ -9,8 +9,15 @@ contents = CSV.open('/home/zondi-maqina/ruby_projects/event_manager/event_attend
 contents.each do |row|
   name = row[:first_name]
   zipcode = row[:zipcode]
-  # If the zip code is exactly five digits, assume it is okay
-  # if the zip code is more than five digits, truncate it to the first five digits
-  # # if zip code is less than five digits, add zeros in front until it becomes five digits
+
+  if zipcode.nil?
+    zipcode = '00000'
+  elsif zipcode.length < 5
+    zipcode = zipcode.rjust(5, '0')
+  elsif zipcode.length > 5
+    zipcode[0..4]
+  else
+    zipcode
+  end
   puts "#{name} #{zipcode}"
 end
