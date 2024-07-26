@@ -18,3 +18,7 @@
 []
 []
 [x] Install curl first with `sudo` package installer
+
+## Discoveries
+
+> A csv file contains simple text that can be read my many applications and each data is seperated by a comma
