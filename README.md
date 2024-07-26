@@ -9,4 +9,4 @@
 
 ## Challenges and Solutions
 
-> [] How to use APIs
+[] How to use APIs
