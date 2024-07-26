@@ -9,6 +9,10 @@
 1. Create directory `event_manager` with all neccesarry files
 2. Fetch csv file to download it
 
+> [!NOTE]
+> This is how content is organised in a csv file
+> <img src="./screenshot/screenshot_of_csv_file.png"></img>
+
 ### Reading contents of file
 
 ```
@@ -28,7 +32,7 @@ end
 - [ ] How to use APIs
 - [ ] How to access data from a Comma Seperated Value file
 - [ ] Downloading external file from CLI
-
+<br></br>
 - [ ]
 - [ ]
 - [x] Install curl first with `sudo` package installer
