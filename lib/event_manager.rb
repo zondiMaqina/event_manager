@@ -5,6 +5,7 @@ puts persons_details
 
 lines = File.readlines('/home/zondi-maqina/ruby_projects/event_manager/event_attendees.csv')
 lines.each do |line|
-  puts line
+  column = line.split(',')
+  puts column
 end
 
