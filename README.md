@@ -1,6 +1,8 @@
 # Event_manager
 
-> A program that keeps track of candidates data on other file (csv) and accesses Google's civic information API for providing persons gorvenment representatives for elections and where they can vote etc.
+> A program that keeps track of candidates data from another file (csv) to another using ruby
+
+> And accesses Google's civic information API for providing persons' gorvenment representatives for elections and where they can vote etc.
 
 ## Development Process
 
