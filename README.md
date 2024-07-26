@@ -35,4 +35,5 @@ end
 
 ## Discoveries
 
-> A csv file contains simple text that can be read my many applications and each data is seperated by a comma
+=> A csv file contains simple text that can be read my many applications and each data is seperated by a comma
+=> The `readlines` method converts a file's lines as arrays items
