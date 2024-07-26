@@ -25,13 +25,13 @@ end
 
 ## Challenges and Solutions
 
-- [] How to use APIs
-- [] How to access data from a Comma Seperated Value file
-- [] Downloading external file from CLI
+- [ ] How to use APIs
+- [ ] How to access data from a Comma Seperated Value file
+- [ ] Downloading external file from CLI
 
-- []
-- []
-[x] Install curl first with `sudo` package installer
+- [ ]
+- [ ]
+- [x] Install curl first with `sudo` package installer
 
 ## Discoveries
 
