@@ -34,7 +34,7 @@ end
 - [ ] Downloading external file from CLI
 <br></br>
 - [ ]
-- [ ]
+- [x] Use the `csv` gem and access the `CSV.open` method where you can edit the header text to symbols
 - [x] Install curl first with `sudo` package installer
 
 ## Discoveries
