@@ -24,6 +24,7 @@ def clean_zipcode(zipcode)
 end
 
 puts 'Event Manager Initialzed'
+template_letter = File.read('form_letter.html')
 
 contents = CSV.open('/home/zondi-maqina/ruby_projects/event_manager/event_attendees.csv',
   headers: true,
@@ -34,5 +35,9 @@ contents.each do |row|
   name = row[:first_name]
   zipcode = clean_zipcode(row[:zipcode])
   legislators = legislator_by_zipcode(zipcode)
-  puts "#{name} #{zipcode} #{legislators}"
+
+  personal_letter = template_letter.gsub('FIRST_NAME', name)
+  personal_letter.gsub!('LEGISLATORS', legislators)
+
+  puts personal_letter
 end
