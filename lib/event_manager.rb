@@ -1,5 +1,6 @@
 require 'csv'
 require 'google/apis/civicinfo_v2'
+require 'erb'
 
 def legislator_by_zipcode(zipcode)
 civic_info = Google::Apis::CivicinfoV2::CivicInfoService.new
@@ -24,8 +25,8 @@ def clean_zipcode(zipcode)
 end
 
 puts 'Event Manager Initialzed'
-template_letter = File.read('form_letter.html')
-
+template_letter = File.read('form_letter.erb')
+erb_template = ERB.new template_letter
 contents = CSV.open('/home/zondi-maqina/ruby_projects/event_manager/event_attendees.csv',
   headers: true,
   header_converters: :symbol
@@ -36,8 +37,6 @@ contents.each do |row|
   zipcode = clean_zipcode(row[:zipcode])
   legislators = legislator_by_zipcode(zipcode)
 
-  personal_letter = template_letter.gsub('FIRST_NAME', name)
-  personal_letter.gsub!('LEGISLATORS', legislators)
-
-  puts personal_letter
+  form_letter = erb_template.result(binding)
+  puts form_letter
 end
