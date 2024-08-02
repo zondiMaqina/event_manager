@@ -21,6 +21,20 @@ def clean_zipcode(zipcode)
   zipcode.to_s.rjust(5, '0')[0..4]
 end
 
+def clean_cellnumber(number)
+  number = number.to_s.gsub(/[^\w]/, '')
+  span = 11
+  if number.length > span || number.length < 10
+    number = '-'
+  elsif number.length == span && number[0] == '1'
+    number.sub('1', '')
+  elsif number.length == span && number[0] != '1'
+    number = '-'
+  else
+    number
+  end
+end
+
 puts 'Event Manager Initialzed'
 template_letter = File.read('/home/zondi-maqina/ruby_projects/event_manager/lib/form_letter.erb')
 erb_template = ERB.new template_letter
@@ -42,11 +56,13 @@ end
 contents.each do |row|
   id = row[0]
   name = row[:first_name]
-
+  number = row[5]
   zipcode = clean_zipcode(row[:zipcode])
 
   legislators = legislator_by_zipcode(zipcode)
 
   form_letter = erb_template.result(binding)
   thank_you_letter(id,form_letter)
+  clean_cellnumber(number)
 end
+
