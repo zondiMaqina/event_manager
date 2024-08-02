@@ -70,11 +70,11 @@ end
 
 def number_of_people()
   times = Array.new
+  hours = Hash.new(0)
 
   @times.each do |time|
     times << time[0..1].gsub(/[^\w]/, '')
   end
-  hours = Hash.new(0)
   times.inject(hours) do |acc, time|
     acc[time] += 1
     acc
