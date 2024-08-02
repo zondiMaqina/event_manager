@@ -53,16 +53,35 @@ def thank_you_letter(id, form_letter)
   end
 end
 
+@times = Array.new
 contents.each do |row|
   id = row[0]
   name = row[:first_name]
   number = row[5]
   zipcode = clean_zipcode(row[:zipcode])
-
+  date_time = row[1]
   legislators = legislator_by_zipcode(zipcode)
 
   form_letter = erb_template.result(binding)
   thank_you_letter(id,form_letter)
   clean_cellnumber(number)
+  @times << date_time.split(' ')[1]
 end
 
+def number_of_people()
+  times = Array.new
+
+  @times.each do |time|
+    times << time[0..1].gsub(/[^\w]/, '')
+  end
+  hours = Hash.new(0)
+  times.inject(hours) do |acc, time|
+    acc[time] += 1
+    acc
+  end
+  puts hours
+end
+
+number_of_people
+# WHich hours of the day most people registered
+# find specifically hour
